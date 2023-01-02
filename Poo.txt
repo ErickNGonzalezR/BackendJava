@@ -6,13 +6,15 @@ Programacion Orientada a Objetos
         - Dejar de ser programador Jr
             *Reclutadores
         - Dejar de copiar y pegar codigo
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    Paradigma de la Programacion Orientada a Objetos
+ 
+  Paradigma de la Programacion Orientada a Objetos
         Teoria que sumunistra la base y modelo para resolver problemas atraves de los Objetos
 
     Se compone de:
         Clases: Son los modelos sobre los que los cuales construimos Objetos
-        Metodos : 
+        Metodos : Son los comportamientos de un objeto
         Propiedades: Tambien puden llamarse atributos, seran sustantivos.
         Objetos: Son aquellos que tienen propiedades y comportamientos, es una instancia de una clase  
 
@@ -20,7 +22,7 @@ Programacion Orientada a Objetos
         Encapsulamiento: cuando se decide el nivel de acceso de una variable especifica
         Abstraccion: Es traer los datos de un objeto se genera un molde
         Herencia: Crea nuevas clases apartir de otras
-        Polimorfismo: 
+        Polimorfismo: Es la posibilidad de sobreescribir un metodo con comportamientos diferentes.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -43,11 +45,305 @@ Programacion Orientada a Objetos
         - Si una variable es static guarda los cambios que se han hecho durante la ejecucion del programa 
 
     FINAL
-    - Es la forma de declara constantes (se escriben en mayuscula) 
-      public static final tipoVariable variable;
-    - Tambien se puden declarar arreglos como constantes
-      public static final tipoVariable variable[];
+      - Es la forma de declara constantes (se escriben en mayuscula) 
+        public static final tipoVariable variable;
+      - Tambien se puden declarar arreglos como constantes
+        public static final tipoVariable variable[];
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
   Clases Anidadas
+    Una clase vide dentro de otra 
     
+      class Clase Exterior{
+        class ClaseAnidada{
+
+        }
+      }  
+    
+    Pueden ser tambien clases internas anidadas Staticas no se necesitan crear instancias para llamarlas
+    Son llamadas comunmente clases helper y se agrupan de acuerdo con la logica y se puede encapsaular    
+      class Clase Exterior{
+        static class ClaseStaticaAnidada{
+
+        }
+      }
+
+    SE INSTANCIAN LAS CLASES EXTERIORES PARA PODER LLAMAR A LA CLASE INTERIOR
+      ClaseExterior claseExterior = new ClaseExterior();
+      ClaseExterior.metodo();
+
+    Para utilizarla se insancia en la clase enterna 
+      ArrayList <ClaseAnidada> ClaseAnidada = new ArrayList<>();
+      public void NombreMetodo (datos){
+        ClaseAnidada.add(new ClaseAnidada(datos))
+      }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+
+  Enumerations (enum) 
+  
+  son datos de tipo muy especiales ya que sirve para declarar colexiones de constantes   
+  
+    public enum Day {
+	  SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+	  THURSDAY, FRIDAY, SATURDAY
+    }
+
+  Puedo crear referencias de enumerations de la siguiente forma:
+
+    Day day;
+    switch (day) {
+	    case MONDAY:
+		    System.out.println(“Mondays are good.”);
+		  break;
+	    case FRIDAY:
+		    System.out.println(“Fridays are nice”);
+		  break;
+	    case SATURDAY: case: SUNDAY:
+		    System.out.println(“Weekends are the best”);
+		  break;
+	    default:
+		    System.out.println(“Midweek are so-so”);
+		  break;
+    }
+
+  Y puedo llamar un valor del enumeration así:
+
+    Day.MONDAY;
+    Day.FRIDAY;
+    Day.SATURDAY;
+
+  Los enumerations pueden tener atributos, métodos y constructores, como se muestra:
+
+    public enum Day {
+      MONDAY("Lunes");
+      TUESDAY("Jueves");
+      FRIDAY("Viernes");
+      SATURDAY("Sábado");
+      SUNDAY("Domingo");
+
+      private String spanish;
+      private Day(String s) {
+        spanish = s;
+      }
+
+      private String getSpanish() {
+        return spanish;
+      }
+    }
+
+  Y para utilizarlo lo podemos hacer así:  
+    
+    System.out.println(Day.MONDAY);
+    Imprimirá: MONDAY
+  
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
+
+  Herencia
+  
+      public class User {
+        Super clase
+      }
+      public class Patient extens User{
+        Subclase
+        
+      }
+
+  UML: Se dirige de la Subclase a la superclase con una punta sin rellenar o blanca     
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  Intefaces 
+    Son un tipo de referencia sililar a una clase que podria contener solo constantes
+    y definiciones de metodos
+
+    El nivel de Abstraccion es de Comportamientos
+
+    UML: se dirige de la clase a la que se le va ha implementar la inferfaz a la interfaz con una linea 
+        punteada y con la punta sin rellenar o blanca (Es parecido a la herencia)
+
+    public interface INombreInterface {
+
+      void NombreMetodo(Valores);
+
+    }
+
+
+    Las interfaces pueden heredar de otras interfaces utilizando la palabra clave extends,
+    el concepto de herencia se aplicará como naturalmente se practica en clases, es decir,
+    la interfaz heredará y adquirirá los métodos de la interfaz padre.
+
+    Una cosa interesante que sucede en caso de herencia con interfaces es que, 
+    aquí sí es permitido la herencia múltiple como ves a continuación:
+
+      public interface IReadable {
+        public void read();
+      }
+
+
+      public interface Visualizable extends IReadable, Serializable {
+        public void setViewed();
+        public Boolean isViewed();
+        public String timeViewed();
+      }
+
+    Además siguiendo las implementaciones de métodos default y private de las versiones Java 8 y 9 respectivamente podemos sobreescribir métodos y añadirles comportamiento, si es el caso.
+
+      public interface Visualizable extends IReadable, Serializable {
+        public void setViewed();
+        public Boolean isViewed();
+        public String timeViewed();
+        
+      @Override
+        default void read() {
+        // TODO Auto-generated method stub
+        }
+      }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  Colecciones 
+    Los Collections nos van a servir para trabajar con colecciones de datos, 
+    específicamente y solamente con objetos, para esto recuerda que tenemos disponibles 
+    nuestras clases Wrapper que nos ayudan a convertir datos primitivos a objetos.
+
+    Los collections se diferencian de los arrays en que su tamaño no es fijo y por el contrario es dinámico.
+
+    Familia de Coleccion de SET 
+    
+      La interface Set tendrá las siguientes características:
+
+          - Almacena objetos únicos, no repetidos.
+          - La mayoría de las veces los objetos se almacenarán en desorden.
+          - No tenemos índice.
+
+      Clase HashSet
+        
+        Interfaz SortedSet y de ella la clase TreeSet.
+
+        HashSet los elementos se guardan en desorden y gracias al mecanismo llamado hashing 
+        (obtiene un identificador del objeto) permite almacenar objetos únicos.
+
+        TreeSet almacena objetos únicos, y gracias a su estructura de árbol 
+        el *acceso es sumamente rápido.
+
+
+    Familia de coleccion de LIST   
+      La interface List tiene éstas características:
+
+          - Puede almacenar objetos repetidos.
+          - Los objetos se almacenan en orden secuencial.
+          - Tenemos acceso al índice.    
+
+      Clase ArrayList puede tener duplicados, no está sincronizada por lo tanto es más rápida
+      
+      Clase Vector es sincronizada, los datos están más seguros pero es más lento.
+      
+      Clase LinkedList, puede contener elementos duplicados, 
+      no está sincronizada (es más rápida) al ser una estructura de datos 
+      doblemente ligada podemos añadir datos por encima de la pila o por debajo.
+
+
+    MAP
+      Lo primero que debes saber es que tiene tres implementaciones:
+
+      HashTable
+      LinkedHashMap
+      HashMap
+      SortedMap ➡️ TreeMap
+
+      Map
+
+        Donde K es el key o clave
+        Donde V es el value o valor
+
+        Podemos declarar un map de la siguiente forma:
+
+          Map<Integer, String> map = new HashMap<Integer, String>();
+          Map<Integer, String> treeMap = new TreeMap<Integer, String>();
+          Map<Integer, String> linkedHashMap = new LinkedHashMap<Integer, String>();
+
+        Como te conté hace un momento Map tiene implementaciones:
+
+            HashMap: Los elementos no se ordenan. No aceptan claves duplicadas ni valores nulos.
+            LinkedHashMap: Ordena los elementos conforme se van insertando; provocando que las búsquedas 
+            sean más lentas que las demás clases.
+            TreeMap: El Mapa lo ordena de forma “natural”. Por ejemplo, si la clave son valores 
+            enteros (como luego veremos), los ordena de menos a mayor.
+
+        Para iterar alguno de estos será necesario utilizar la interface Iterator y para recorrerlo
+        lo haremos un bucle while así como se muestra:
+
+          Para HashMap
+          
+          // Imprimimos el Map con un Iterador
+          
+          Iterator it = map.keySet().iterator();
+          while(it.hasNext()){
+            Integer key = it.next();
+            System.out.println("Clave: " + key + " -> Valor: " + map.get(key));
+          }
+          
+          Para LinkedHashMap
+          
+          // Imprimimos el Map con un Iterador
+          
+          Iterator it = linkedHashMap.keySet().iterator();
+          while(it.hasNext()){
+            Integer key = it.next();
+            System.out.println("Clave: " + key + " -> Valor: " + linkedHashMap.get(key));
+          }
+          
+          Para TreeMap
+          
+          // Imprimimos el Map con un Iterador
+          
+          Iterator it = treeMap.keySet().iterator();
+          while(it.hasNext()){
+            Integer key = it.next();
+            System.out.println("Clave: " + key + " -> Valor: " + treeMap.get(key));
+          }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  Clases Abtractas
+    Es una combinacion de la herencia y las Intefaces 
+
+    - No implementa todos los metodos 
+    - No creamos instancias 
+
+      public abstract class Figura {
+
+      }
+
+      class triangulo extends Figura {
+
+      }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  Metodos Abtractos
+    Cuando se este heredando es obligatorio implementar este metodo
+       - No se le colocan instrucciones 
+       - Se le colocan instrucciones cuando este en la clase hija y sea obligatorio implementarlo
+
+       abstract void NombreMetodo();
+
+        class NombreClase extends ClasePadre{
+          void NombreMetodo (){
+            instrucciones
+          }
+        }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+
+  Clases Anonimas
+    Son formas de intanciar clases Abtractas
+
+      ClaseAbstracta Clase = new ClaseAbstracta() {
+        @Override
+        public void MetodoAbtracto(){
+
+        }
+      };
+     Haci se llaman las clases anonimas  
+      clase.MetodoAbtracto();
