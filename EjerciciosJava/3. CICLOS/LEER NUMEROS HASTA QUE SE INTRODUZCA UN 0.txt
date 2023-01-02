@@ -1,0 +1,15 @@
+LEER NUMEROS HASTA QUE SE INTRODUZCA UN 0. PARA
+CADA UNO INDICAR SI ES PAR O SI ES IMPAR.
+
+	public static void main(String[] args) {
+        double numero = 1;
+        while (numero != 0 ){
+            numero = Double.parseDouble(JOptionPane.showInputDialog("Digite un numero "));
+            if(numero % 2 == 0){
+                JOptionPane.showMessageDialog(null,"El numero es par");
+            }
+            else if (numero > 0){
+                JOptionPane.showMessageDialog(null,"El numero es impar");
+            }
+        }
+    }

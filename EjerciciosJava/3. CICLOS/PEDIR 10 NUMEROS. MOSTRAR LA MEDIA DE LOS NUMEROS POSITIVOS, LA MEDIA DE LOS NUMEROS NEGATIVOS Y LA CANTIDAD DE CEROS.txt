@@ -1,0 +1,23 @@
+PEDIR 10 NUMEROS. MOSTRAR LA MEDIA DE LOS NUMEROS POSITIVOS, LA MEDIA DE LOS NUMEROS NEGATIVOS Y LA CANTIDAD DE CEROS
+
+	public static void main(String[] args) {
+        int  numero= 0, positivo = 0, negativo = 0, cero = 0;
+        for(int i = 0; i <= 10 ; i++) {
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero"));
+            if (numero < 0){
+                negativo += numero;
+            }
+            else if(numero > 0){
+                positivo += numero;
+            }
+            else if (numero == 0){
+                cero++;
+            }
+        }
+        positivo /=2;
+        negativo /=2;
+        JOptionPane.showMessageDialog(null,"La media de los numeros positivos que digito es: "+positivo);
+        JOptionPane.showMessageDialog(null,"La media de los numeros negativos que digito es: "+negativo);
+        JOptionPane.showMessageDialog(null,"La cantidad de 0 que digito es: "+cero);
+    }
+

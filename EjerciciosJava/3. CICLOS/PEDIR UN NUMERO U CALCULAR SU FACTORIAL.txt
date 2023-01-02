@@ -1,0 +1,12 @@
+PEDIR UN NUMERO U CALCULAR SU FACTORIAL
+N! = 1*2*3*...N
+
+	 public static void main(String[] args) {
+        int  numero, factorial = 1;
+        numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero"));
+        while(numero > 0){
+            factorial *= numero;
+            numero --;
+        }
+        JOptionPane.showMessageDialog(null,"El factorial es: "+factorial);
+    }

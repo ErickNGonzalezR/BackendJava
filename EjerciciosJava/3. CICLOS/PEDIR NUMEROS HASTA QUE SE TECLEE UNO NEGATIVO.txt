@@ -1,0 +1,11 @@
+PEDIR NUMEROS HASTA QUE SE TECLEE UNO NEGATIVO, Y
+MOSTRAR CUANTOS NUMEROS DE HAN INTROCIDO
+	
+	 public static void main(String[] args) {
+        int numero, contador=0 ;
+        do {
+            numero = Integer.parseInt(JOptionPane.showInputDialog("digite un numero"));
+            contador++;
+        }while (numero >= 0);
+        JOptionPane.showMessageDialog(null,"La cantidad de numero que escribio antes del numero negativo fueron "+contador);
+    }

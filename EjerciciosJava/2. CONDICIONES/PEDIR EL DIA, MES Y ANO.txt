@@ -1,0 +1,27 @@
+PEDIR EL DIA, MES Y ANO DE UNA FECHA E INDICAR SI LA 
+FECHA ES CORRECRA. SUPONIENDO QUE TODOS LOS MESES SO DE 30 DIAS
+
+	public static void main(String[] args) {
+        int dia, mes, año;
+        dia = Integer.parseInt(JOptionPane.showInputDialog("Digite un dia "));
+        mes = Integer.parseInt(JOptionPane.showInputDialog("Digite un mes "));
+        año = Integer.parseInt(JOptionPane.showInputDialog("Digite un año "));
+        if(dia <= 30 && dia > 0){
+            if (mes <= 12 && mes > 0){
+                if(año !=0){
+                    JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                    JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"El año que digito es incorrecto " );
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"El mes que digito es incorrecto");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"El dia que digito es incorrecto.");
+        }
+    }
+	

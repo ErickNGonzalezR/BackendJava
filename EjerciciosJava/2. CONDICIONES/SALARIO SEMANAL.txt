@@ -1,0 +1,17 @@
+UN OBRERO NEESTA CALCULAR SU SALARIO SEMANAL, EL CUAL SE OBTIENE DE LA SIGUIENTE MANERA:
+SI TRABAJA 40 HORAS O MENOS SE LE PAGA $16 POR HORA.
+SI TRABAJA MAS DE 40 HORAS Y SE LE PAGA $16 POR CADA UNA DE LAS PRIMERAS 40 HORAS Y $20 POR CADA HORA EXTRA
+
+	public static void main(String[] args) {
+        int horas;
+        horas = Integer.parseInt(JOptionPane.showInputDialog("Digite cantidad de horas "));
+        if(horas > 40) {
+           horas -= 40;
+           horas = horas * 20+640;
+           JOptionPane.showMessageDialog(null,"El salario semanal es de : "+horas);
+        }
+        else{
+            horas *= 16;
+            JOptionPane.showMessageDialog(null, "El salario semanal es de : "+horas );
+        }
+    }

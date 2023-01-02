@@ -1,0 +1,11 @@
+PEDIR NUMEROS HASTA QUE SE TECLEE UN 0, MOSTRAR LA SUMA DE TODOS LOS NUMEROS INTRODICIDOS.
+
+	 public static void main(String[] args) {
+        int numero, ac = 0;
+
+        do {
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero"));
+            ac += numero;
+        }while (numero != 0);
+        JOptionPane.showMessageDialog(null,"La suma de los numeros es: "+ac);
+    }

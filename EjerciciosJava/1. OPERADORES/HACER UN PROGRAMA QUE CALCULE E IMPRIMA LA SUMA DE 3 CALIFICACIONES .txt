@@ -1,0 +1,10 @@
+HACER UN PROGRAMA QUE CALCULE E IMPRIMA LA SUMA DE 3 CALIFICACIONES 	
+	
+	public static void main(String[] args) {
+        	double nota1, nota2, nota3, suma;
+        	nota1 = Integer.parseInt(JOptionPane.showInputDialog("Digite primera nota"));
+        	nota2 = Integer.parseInt(JOptionPane.showInputDialog("Digite segunda nota"));
+        	nota3 = Integer.parseInt(JOptionPane.showInputDialog("Digite tercera nota"));
+        	suma = nota1+ nota2+ nota3;
+        	JOptionPane.showMessageDialog(null,"La suma de las notas es: "+suma);
+    	}

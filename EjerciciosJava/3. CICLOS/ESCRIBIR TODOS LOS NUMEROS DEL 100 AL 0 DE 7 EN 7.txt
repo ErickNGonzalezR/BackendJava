@@ -1,0 +1,9 @@
+ESCRIBIR TODOS LOS NUMEROS DEL 100 AL 0 DE 7 EN 7
+
+	public static void main(String[] args) {
+        int  ac = 100;
+        while(ac>=0){
+            JOptionPane.showMessageDialog(null,ac);
+            ac -= 7;
+        }
+    }

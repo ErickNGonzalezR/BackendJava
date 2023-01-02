@@ -1,0 +1,13 @@
+HACER UN PROGRAMA QUE LEA UN CARACTER POR TECLADO Y COMPRUEBE SI ES UNA LETRA MAYUSCULA
+
+	public static void main(String[] args) {
+        char letra;
+        letra = (JOptionPane.showInputDialog("Digite una letra ").charAt(0));
+        if(Character.isUpperCase(letra)) {
+            JOptionPane.showMessageDialog(null, "La letra es mayuscula ");
+        }
+        else{
+            
+                JOptionPane.showMessageDialog(null, "La letra es minuscula" );
+        }
+    }

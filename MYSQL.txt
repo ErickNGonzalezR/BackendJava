@@ -1,0 +1,83 @@
+CONTRASEÑA DE ORACLE
+Nicolo12'
+CORREO
+NICOLO288@GMAIL.COM
+LENGUAJE SQL
+ESTRUCTURA DE LA BASE DE DATOS
+	CREATE DATABASE		->	CREAR BASE DE DATOS	
+	DROP DATABASE		->	ELIMINAR BASE DE DATOS
+	CREATE TABLE		->	CREAR TABLAS
+	ALTER TABLE		->	MODIFICAR TABLAS
+	DROP TABLE		->	ELIMINAR TABLAS
+CONSULTANDO Y MODIFICANDO LOS DATOS
+	SELECT			->	BUSCAR
+	INSERT			->	AGREGAR
+	UPDATE			->	MODIFICAR
+	DALETE			->	ELIMINAR
+AGREGAR BASE DE DATOS
+	CREATE DATABASE sistema_veterinara;
+ELIMINAR BASES DE DATOS
+	DROP DATABASE IF EXISTS sistema_veterinaria;
+
+PARA CAMBIAR EL NOMBRE
+	RENAME TABLE 'nombre de la tabla mal escrita' TO 'nombre de la tabla corregida';
+
+COMANDO PARA LA CREACION DE TABLAS
+	DROP TABLE IF EXISTS usuarios;
+
+COMANDO PARA LA CERACION DE TABLAS
+	CREATE TABLE usuarios(
+	id int (11) NOT NULL AUTO_INCREMENT,
+	nombre varchar (80) NOT NULL,
+	apellido varchar (80) NOT NULL,
+	fecha_nacimiento SATETIME NULL,	
+	PRIMARY KEY (id)
+	); 
+TABLAS CON CLAVES FORANEAS
+	CREATE TABLE publicaciones(
+	id int (11) not null auto_increment,
+	autor_id int (11) not null,
+	titulo varchar (100) not null,
+	texto text not null, 
+	primary key (id),
+	foreign key (autor_id) references usuarios(id)
+	);
+
+AREGAR COLUMNAS
+	ALTER TABLE usuarios ADD COLUMN telefono varchar(45) NULL;
+ELIMINAR COLUMNAS 
+	ALTER TABLE usuarios DROP telefono;
+MODIFICAR COLUMNAS 
+	ALTER TABLE usuarios ALTER COLUMN telefono varchar(35) NULL; 
+ 
+AGREGAR Y ELIMINAR DATOS
+	COMANDO PARA AGREGAR UNA FILA
+		insert into usuarios (nombre, apellido, fecha_nacimiento, telefono)
+		values('erick','gonzalez','2000-13-51 10:00:00','2132132123');
+
+	COMANDO PARA ELIMINAR UNA FILA
+		delete from usuarios where id='1';
+	MODIFICAR UN DATO
+		UPDATE usuarios
+		SET nombre ='pepe',
+		apellido ='angelini'
+		where id ='1';
+	CONSULTAR DATOS
+		BUSCAR TODOS LOS USUARIOS 
+			SELECT*FROM usuarios;
+			SELECT*FROM usuarios WHERE apellido = 'gonzalez' and nombre ='erick';
+			SELECT*FROM usuarios WHERE apellido = 'gonzalez' or nombre ='erick';
+		BUSCAR EL USUSARIO CON EL ID 1
+			SELECT*FROM usuarios WHERE id ='1';
+		BUSCAR EL NOMBRE Y APELLIDO DEL USUARIO CON ID 1 
+			SELECT nombre , apellido
+			FROM usuarios WHERE iD ='1';
+		BUSCAR TEXTOS
+			SELECT*DROM usuarios 
+//PARA TEXTOS QUE COMIENCEN EN ER			
+			WHERE nombre like 'er%'
+//PARA TEXTOS QUE CONTENGAN ER
+			SELECT*DROM usuarios 
+			WHERE nombre like '%er%'
+		PARA CONTAR EL NUMERO DE FILAS QUE HAY
+			SELECT COUNT(*) AS ' CANTIDAD 'FROM usuarios WHERE apellido = 'gonzalez' and nombre ='erick';

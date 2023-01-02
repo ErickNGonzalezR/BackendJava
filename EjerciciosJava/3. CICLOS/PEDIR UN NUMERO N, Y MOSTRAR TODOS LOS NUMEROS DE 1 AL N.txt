@@ -1,0 +1,10 @@
+PEDIR UN NUMERO N, Y MOSTRAR TODOS LOS NUMEROS DE 1 AL N
+
+	 public static void main(String[] args) {
+        int numero = 1, ac = 1;
+        numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero"));
+        while(numero>=ac){
+                JOptionPane.showMessageDialog(null,ac);
+                ac++;
+        }
+    }

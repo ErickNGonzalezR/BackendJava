@@ -1,0 +1,31 @@
+PEDIR UNA NOTA DE 0 A 10 Y MOSTRARLA DE LA FORMA:
+INSUFICIENTE, SUFICIENTE, BIEN, NOTABLE Y SOBRESALIENTE
+
+	public static void main(String[] args) {
+        int nota;
+        nota = Integer.parseInt(JOptionPane.showInputDialog("Digite una nota "));
+
+        switch (nota){
+            case 0:
+            case 1:
+            case 2:
+                JOptionPane.showMessageDialog(null,"Su nota es INSUFICIENTE ");
+            break;
+            case 3:
+            case 4:
+                JOptionPane.showMessageDialog(null,"Su nota es SUFICIENTE");
+            break;
+            case 5:
+            case 6:
+                JOptionPane.showMessageDialog(null,"Su nota es BIEN ");
+            break;
+            case 7:
+            case 8:
+                JOptionPane.showMessageDialog(null,"Su nota es NOTABLE");
+            break;
+            case 9:
+            case 10:
+                JOptionPane.showMessageDialog(null,"Su nota es SOBRESALIENTE ");
+            break;
+        }
+    }

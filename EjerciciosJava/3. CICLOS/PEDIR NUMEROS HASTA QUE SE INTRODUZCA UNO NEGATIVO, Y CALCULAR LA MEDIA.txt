@@ -1,0 +1,14 @@
+PEDIR NUMEROS HASTA QUE SE INTRODUZCA UNO NEGATIVO, Y CALCULAR LA MEDIA
+
+	public static void main(String[] args) {
+        int numero = 1, suma = 0,ac = 0;
+        while(numero>=0){
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero"));
+            if(numero>=0) {
+                ac++;
+                suma += numero;
+            }
+        }
+        suma /= ac;
+        JOptionPane.showMessageDialog(null,"La media de los numeros que digito es: "+suma);
+    }	

@@ -1,0 +1,14 @@
+PEDIR 10 SUELDOS. MOSTRAR SU SUMA Y CUANTOS HAY MAYORES DE $ 1000 
+
+	 public static void main(String[] args) {
+        int  numero, suma = 0, ac = 0;
+        for(int i = 1; i <= 10 ; i++) {
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un sueldo"));
+            suma += numero;
+            if (numero > 100){
+                ac++;
+            }
+        }
+        JOptionPane.showMessageDialog(null,"La suma de los sueldos es: "+suma);
+        JOptionPane.showMessageDialog(null,"La cantidad de sueldos superiores a $1000 es: "+ac);
+    }

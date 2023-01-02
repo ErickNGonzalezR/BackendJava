@@ -1,0 +1,22 @@
+PEDIR UN NUMERO ENTRE 0 Y 99 999 Y DECIR CUANTRAS CIFRAS TIENE
+
+	public static void main(String[] args) {
+        int a;
+        a = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero "));
+        if (a <= 9){
+            JOptionPane.showMessageDialog(null,"el numero tiene 1 cifra");
+
+        }
+        else if (a <= 99)  {
+            JOptionPane.showMessageDialog(null,"el numero tiene 2 cifra");
+        }
+        else if (a <= 999)  {
+            JOptionPane.showMessageDialog(null,"el numero tiene 3 cifra");
+        }
+        else if (a <= 9999)  {
+            JOptionPane.showMessageDialog(null,"el numero tiene 4 cifra");
+        }
+        else if (a <= 99999)  {
+            JOptionPane.showMessageDialog(null,"el numero tiene 5 cifra");
+        }
+    }

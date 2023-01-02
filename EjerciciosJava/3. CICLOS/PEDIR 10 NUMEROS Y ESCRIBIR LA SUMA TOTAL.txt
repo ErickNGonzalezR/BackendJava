@@ -1,0 +1,11 @@
+PEDIR 10 NUMEROS Y ESCRIBIR LA SUMA TOTAL
+
+	public static void main(String[] args) {
+        int numero, ac = 1, suma = 0;
+        while(ac<=10){
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero"));
+            ac++;
+            suma += numero;
+        }
+        JOptionPane.showMessageDialog(null,"La suma de los nuemros es: "+suma);
+    }

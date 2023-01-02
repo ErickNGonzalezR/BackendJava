@@ -1,0 +1,131 @@
+PEDIR EL DIA, MES Y AÑO DE UNA FECHA E INDICAR SI LA
+FECHA ES CORECTA ON LOS MESES DE 28, 30 Y 31 DIAS. SIN AÑOS BISIESTOS
+
+	
+            public static void main(String[] args) {
+        int dia, mes, año;
+        dia = Integer.parseInt(JOptionPane.showInputDialog("Digite un dia "));
+        mes = Integer.parseInt(JOptionPane.showInputDialog("Digite un mes "));
+        año = Integer.parseInt(JOptionPane.showInputDialog("Digite un año "));
+        if(año !=0){
+            if (mes <= 12 && mes > 0){
+               switch (mes){
+                   case 1  :
+                       if(dia <= 31 && dia > 0){
+                       JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                       JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                   }
+                   else {
+                       JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                   }
+                   break;
+                   case 2 :
+                       if(dia <= 28 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 3 :
+                       if(dia <= 31 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 4:
+                       if(dia <= 30 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 5:
+                       if(dia <= 31 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 6:
+                       if(dia <= 30 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 7:
+                       if(dia <= 31 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 8:
+                       if(dia <= 31 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 9:
+                       if(dia <= 30 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 10:
+                       if(dia <= 31 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 11:
+                       if(dia <= 30 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+                   case 12:
+                       if(dia <= 31 && dia > 0){
+                           JOptionPane.showMessageDialog(null ,"La fecha que indico es correcta" );
+                           JOptionPane.showMessageDialog(null,"DIA "+dia+" MES "+mes+" ANO " +año);
+                       }
+                       else {
+                           JOptionPane.showMessageDialog(null, "El dia que digito es incorrecto.");
+                       }
+                   break;    
+               }
+
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"El mes que digito es incorrecto");
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"El año que digito es incorrecto " );
+        }
+    }

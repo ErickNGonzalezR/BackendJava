@@ -1,0 +1,53 @@
+Programacion Orientada a Objetos
+    Que es un Paradigma?
+        Teoria que suministra la base y modelo para resolver problemas 
+    Importancia 
+        - Programar mucho mas rapido 
+        - Dejar de ser programador Jr
+            *Reclutadores
+        - Dejar de copiar y pegar codigo
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Paradigma de la Programacion Orientada a Objetos
+        Teoria que sumunistra la base y modelo para resolver problemas atraves de los Objetos
+
+    Se compone de:
+        Clases: Son los modelos sobre los que los cuales construimos Objetos
+        Metodos : 
+        Propiedades: Tambien puden llamarse atributos, seran sustantivos.
+        Objetos: Son aquellos que tienen propiedades y comportamientos, es una instancia de una clase  
+
+    Pilares
+        Encapsulamiento: cuando se decide el nivel de acceso de una variable especifica
+        Abstraccion: Es traer los datos de un objeto se genera un molde
+        Herencia: Crea nuevas clases apartir de otras
+        Polimorfismo: 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    STATIC
+        - Lo utilizamos pra llamar una variable sin utilizar un objeto,
+          utilizando el nombre de la clase . el metodo 
+
+        - Se invoca una clase que no tiene instancias 
+
+        - Pedemos llamar a los metodos o constantes de una clase sin necesidad de escribir si nombre 
+          colocando static al import 
+          
+          import static java.lang.Math.*;
+          public class principal {
+            public static void main (String [] args){
+                system.out.println(PI)
+            }
+          }
+        
+        - Si una variable es static guarda los cambios que se han hecho durante la ejecucion del programa 
+
+    FINAL
+    - Es la forma de declara constantes (se escriben en mayuscula) 
+      public static final tipoVariable variable;
+    - Tambien se puden declarar arreglos como constantes
+      public static final tipoVariable variable[];
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+  Clases Anidadas
+    

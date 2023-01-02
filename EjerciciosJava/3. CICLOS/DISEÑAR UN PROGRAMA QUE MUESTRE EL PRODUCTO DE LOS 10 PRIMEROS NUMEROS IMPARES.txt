@@ -1,0 +1,12 @@
+DISEÑAR UN PROGRAMA QUE MUESTRE EL PRODUCTO DE LOS 10 PRIMEROS NUMEROS IMPARES
+
+	int  numero= 0, i = 1, ac = 1;
+        while ((i <= 10)){
+            if(numero % 2 != 0 ){
+                ac *= numero;
+                i++;
+            }
+            numero ++;
+        }
+        JOptionPane.showMessageDialog(null,"El producto de los primeros 10 numeros impares se: "+ac);
+    }

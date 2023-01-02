@@ -1,0 +1,18 @@
+PEDIR DOS NUMERO Y DECIR CUAL ES MAYOR O SI SON IGUALES
+	
+	public static void main(String[] args) {
+        int numero1, numero2;
+        numero1 = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero "));
+        numero2 = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero "));
+        if(numero1 == numero2) {
+            JOptionPane.showMessageDialog(null, "El numero " + numero1 + " y el numero " + numero2 + " son iguales");
+        }
+        else{
+            if (numero1 > numero2) {
+                JOptionPane.showMessageDialog(null, "El numero " + numero1 + " es mayor que el numero " + numero2);
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "El numero " + numero2 + " es mayor que el numero "+numero1);
+            }
+        }
+    }

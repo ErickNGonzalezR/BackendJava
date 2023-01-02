@@ -1,0 +1,14 @@
+LA CALIFICACION FINAL D UN ESTUDIANTE DE INFORMATICA SE CALCULA CO BASE A LAS CALIFICACIONES DE
+CUATRO ASPECTOS DE SU RENDIMIENTO ACADEMICO: PARTICIPACOPN, PRIMER EXAMEN PARCIAL , SEGUNDO EXAMEN 
+PARCIAL Y EXAMEN DINAL. SABIENDO QUE LAS CALIFICACIONES ANTERIORES ENTRAN A LA CALIFICACION FINAL CON PONDERACIONES
+DEL 10%, 25%, 25% Y 40%, HACER UN PROGRAMA QUE CALCULE E IMPRIMA LA CALIFICACION FINA OBTENIDA POR UN ESTUDIANTE.
+
+	public static void main(String[] args) {
+        double participacion, priexamen, segexamen, examenf, notaf;
+        participacion = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota de participacion."));
+        priexamen = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota del primer examen."));
+        segexamen = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota del segunto examen."));
+        examenf = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota del examen final."));
+        notaf = (participacion * .1) + (priexamen * .25) + (segexamen * .25) + (examenf * .4);
+        JOptionPane.showMessageDialog(null,"La nota final del estudiante es de : "+notaf);
+    } 

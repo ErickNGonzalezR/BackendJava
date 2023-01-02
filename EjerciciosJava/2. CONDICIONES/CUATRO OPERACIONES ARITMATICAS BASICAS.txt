@@ -1,0 +1,36 @@
+CONSTRUIR UN PROGRAMA QUE SIMULE EL FUNCIONAMIENTO DE UNA CALCULADORA QUE PUEDE REALIZAR LAS 
+CUATRO OPERACIONES ARITMATICAS BASICAS (SUMA, RESTA, PRODUCTO Y DIVISION) CON VALORES NUMERICOS ENTEROS. EL USUARIO DEBE
+ESPECIFICAR LA OPERACION CON EL PREIMER CARACTER DEL RPIMER PARAMETRO DE LA LINEA DE COMANDOS S O s PARA LA SUMA, R O r
+PARA LA RESTA, P, p, M O m PARA EL PRODUCTO Y D O d PARA LA DIVISION.
+
+	  public static void main(String[] args) {
+        int numero1, numero2;
+        char operacion;
+        numero1 = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero "));
+        numero2 = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero "));
+        operacion = JOptionPane.showInputDialog("Digite la operacion que desea ").charAt(0);
+        switch (operacion){
+            case 's':
+            case 'S':
+                numero1 += numero2;
+                JOptionPane.showMessageDialog(null,"El resultado es: "+numero1);
+            break;
+            case 'r':
+            case 'R':
+                numero1 -= numero2;
+                JOptionPane.showMessageDialog(null,"El resultado es: "+numero1);
+            break;
+            case 'p':
+            case 'P':
+            case 'm':
+            case 'M':
+                numero1 *= numero2;
+                JOptionPane.showMessageDialog(null,"El resultado es: "+numero1);
+            break;
+            case 'd':
+            case 'D':
+                numero1 /= numero2;
+                JOptionPane.showMessageDialog(null,"El resultado es: "+numero1);
+            break;
+        }
+    }

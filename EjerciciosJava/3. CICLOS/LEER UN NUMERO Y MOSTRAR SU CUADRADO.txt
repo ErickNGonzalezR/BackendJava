@@ -1,0 +1,12 @@
+LEER UN NUMERO Y MOSTRAR SU CUADRADO, REPETIR EL
+PROCESO HASTA QUE SE INDRODUZCA UN NUMERO NEGATIVO
+
+	public static void main(String[] args) {
+        double numero = 1, cuadrado;
+        while (numero >= 0 ){
+            numero = Double.parseDouble(JOptionPane.showInputDialog("Digite un numero "));
+            cuadrado = pow(numero, 2);
+            JOptionPane.showMessageDialog(null,"El cuadrado del numero que digito es: "+cuadrado);
+        }
+    
+    }

@@ -1,0 +1,22 @@
+REALIZAR UN JUEGO PARA ADIVINAR UN NUMERO. PARA ELLO GENERAR UN NUMERO ALEATORIO
+ENTRE 0 - 100, Y LUEGO IR PIDIENDO NUMEROS INDICANDO SI ES MAYOR O MENOR CON RESMECTO A N. EL PROCESO
+TERMINA CUANDO EL USUARIO ACIERTA Y MOSTRAR EL NUMERO DE INTENTOS.
+
+	import java.util.Random;
+
+		 public static void main(String[] args) {
+        int numero, contador = 0;
+        Random claseRandom = new Random();
+        int n = claseRandom.nextInt(101);
+        do {
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Digite un numero"));
+            contador++;
+            if (n<numero){
+                JOptionPane.showMessageDialog(null,"El numero es menor");
+            }
+            else if(n>numero){
+                JOptionPane.showMessageDialog(null,"El numero es mayor");
+            }
+        }while (numero != n);
+        JOptionPane.showMessageDialog(null,"La cantidad de intentos fueron: "+contador);
+    } 
