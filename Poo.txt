@@ -157,7 +157,7 @@ Programacion Orientada a Objetos
     Son un tipo de referencia sililar a una clase que podria contener solo constantes
     y definiciones de metodos
 
-    El nivel de Abstraccion es de Comportamientos
+    El nivel de Abstraccion es de Comportamientos o metodos
 
     UML: se dirige de la clase a la que se le va ha implementar la inferfaz a la interfaz con una linea 
         punteada y con la punta sin rellenar o blanca (Es parecido a la herencia)
@@ -347,3 +347,82 @@ Programacion Orientada a Objetos
       };
      Haci se llaman las clases anonimas  
       clase.MetodoAbtracto();
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////      
+
+Login usuario
+
+  public static Adminisitrador adminLogged;
+  public static Usuario userLogged;
+
+  private static void  authUser(int userType){
+    
+    // userType = 1 administrador
+    // userType = 2 usuario
+
+    
+    ArrayList <Administrador> admin= new ArrayList<>();
+
+
+    ArrayList <Usuario> user= new ArrayList<>();
+
+    Boolean emailCorrect = false;
+
+    do {
+      System.out.print("insete su correo: [a@a.com]");
+      scanner sc = new Scanner (System.in);
+      String email = sc.nextLine();
+      
+      if (userType ==1){
+       
+        for (Administrador a: admin )  {
+       
+          if(a.getEmail().equals(email)){
+            emailCorrect = true;
+            // obtener el administrador logenado
+            adminLogged = a;
+            // showAdminMenu
+          }
+        }
+      }
+      
+      if (userType ==2){
+         for (Usuario u: user )  {
+       
+          if(u.getEmail().equals(email)){
+            emailCorrect = true;
+            // obtener el uisuario logenado
+            userLogged = u;
+            // showUserMenu
+          }
+        }
+      }
+
+    }while(!emailCorrect)
+  }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  Forma de usar el date 
+    SimpreDateFormat Format = new SimpreDateFormat ("dd-MM-yyyy")
+
+    /**
+    * se Hace en el contructor y se maneja como String
+    */
+    public{
+      try{
+        this.date=format.parse(date);
+      }catch(parseExceprion e) {
+        e.printStacktrace();
+      }
+    }
+
+    // get normal
+    public Date getDate(){
+      return date
+    }
+    
+    // get que tenemos que usar para sobre escribir y convierte de date a String
+    public String getDate (String DATE) {
+      return format.format(date);
+    }

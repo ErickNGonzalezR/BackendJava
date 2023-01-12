@@ -6,15 +6,15 @@ build -> build Artifacts -> se abre un menu y seleccionamos Build
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bitycode
-.class
+	.class
 
-ATAJOS EN JAVA
-	main 	se hace main solo
-	sout	System.out.print("");
+	ATAJOS EN JAVA
+		main 	se hace main solo
+		sout	System.out.print("");
 
-Las constates se escriben en MAYUSCULAS y Contienen _ si es de 2 parablras COLOR_ROJO
-Las clase se escriben upper camel case  (la primera letra en mayuscula)
-Las variables y los metodos se escriben con lower camel case (la primera letra en minuscula)
+	Las constates se escriben en MAYUSCULAS y Contienen _ si es de 2 parablras COLOR_ROJO
+	Las clase se escriben upper camel case  (la primera letra en mayuscula)
+	Las variables y los metodos se escriben con lower camel case (la primera letra en minuscula)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 TIPOS DE DATOS
@@ -33,7 +33,6 @@ TIPOS DE DATOS
  	float		DECIMAL SIMPLE 		MUY GRANDE								EL NUMERO SIEMPRE TIENE QUE TENER UNA F AL FINAL
 	
 	var 		con el tipo de dato var deduce el tipo de dato que es la variable en jdk 10
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -149,62 +148,62 @@ ESTRUCTURAS
 		else{
 	
 		}
-	boolean isTurnLight = false;
-	if (isTurnLight){
-		isTurnLight = false;
-	}else{
-		isTurnLight = true;
-	}
-	OPERADOR TERNEARIO PARA IF 
-	isTurnLight =()? valorRegreso (Si la condicion se cumple de vuelve valorRegreso): valorRegreso1 (Si la condicopn no se cumple de vuelve valorRegreso1);
-	isTurnLight = (isTurnLight)? false : true;
-
-
-
-BUCLES	
-	WHILE
-		int contador = 0;
-		while(contador<3){
-			contador ++;
-			verificarConexion();
+		
+		boolean isTurnLight = false;
+		if (isTurnLight){
+			isTurnLight = false;
+		}else{
+			isTurnLight = true;
 		}
-	DO WHILE
-		int contador = 0;
-		do{
-			contador ++;
-			verificarConexion();
-		}while(contador < 3);
-	FOR
-		for(int cont = 0; cont < 3; cont++){
-			verificarConexion();  
+		OPERADOR TERNEARIO PARA IF 
+		isTurnLight =()? valorRegreso (Si la condicion se cumple de vuelve valorRegreso): valorRegreso1 (Si la condicopn no se cumple de vuelve valorRegreso1);
+		isTurnLight = (isTurnLight)? false : true;
+
+	BUCLES	
+		WHILE
+			int contador = 0;
+			while(contador<3){
+				contador ++;
+				verificarConexion();
+			}
+		DO WHILE
+			int contador = 0;
+			do{
+				contador ++;
+				verificarConexion();
+			}while(contador < 3);
+		FOR
+			for(int cont = 0; cont < 3; cont++){
+				verificarConexion();  
+			}
+
+		Si escribimos fori se hace solo
+
+		BREAK rompe los ciclos
+	
+	SWITCH
+		switch(dato){
+		case 1:instrucciones;
+			break
+		caso 2:instrucciones;
+			break
+		case n :instrucciones;
+			break
+		default:caso contrario;
+			break;
 		}
 
-	Si escribimos fori se hace solo
+		OTRA ESTRUCTURA SWITCH (FUNCIONA PARA JAVA 12)
 
-	BREAK rompe los ciclos
-SWITCH
-	switch(dato){
-	case 1:instrucciones;
-		break
-	caso 2:instrucciones;
-		break
-	case n :instrucciones;
-		break
-	default:caso contrario;
-		break;
-	}
+			switch (a){
+				case valor1 -> ;
+				case valor2 -> ;
+				case valor3 -> ;
+				case valor4 -> ;
+				case valor5 -> ;
+				default -> "N/A"
 
-OTRA ESTRUCTURA SWITCH (FUNCIONA PARA JAVA 12)
-
-	switch (a){
-		case valor1 -> ;
-		case valor2 -> ;
-		case valor3 -> ;
-		case valor4 -> ;
-		case valor5 -> ;
-		default -> "N/A"
-
-	}
+			}
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 LINEA DE SAIDA DE DATOS
@@ -233,6 +232,7 @@ PARA COMVERTIR DE STRING A INTEGER, DOUBLE, CHAR, FLOAT
 	variable = Double.parsDouble(strvariable) 
 	variable = jOptionPane.showInputDialog(¨digite un caracter: ¨).charAT.(0);
 	variable = Float.parseFloat();
+
 PARA COMVERTIR DE INTEGER A DOUBLE 
 	Double.valueOf(variable)
 
@@ -313,13 +313,13 @@ FORMULARIOS
 ARREGLOS
 	String[] nombreVariable = new String [tamañoArreglo];
 
-PARA HACER ARREGLOS SIN NECESIDAD DE COLOCAR TAMAÑO
-	List<String> lista = new Ar rayList<String>();
-	lista.add(variable);
+	PARA HACER ARREGLOS SIN NECESIDAD DE COLOCAR TAMAÑO
+		List<String> lista = new Ar rayList<String>();
+		lista.add(variable);
 
-LIBRERIA NECESARIAS PARA LOS ARREGLOS
-	import java.util.ArrayList;
-	import java.util.List;
+	LIBRERIA NECESARIAS PARA LOS ARREGLOS
+		import java.util.ArrayList;
+		import java.util.List;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
