@@ -1,0 +1,114 @@
+
+Bienvenido al curso de Testing en Java, en este curso aprenderás:
+
+    ¿Qué es un test?
+    ¿Para qué sirve?
+    Tipos de test
+    Partes de un test
+    TDD
+    En el curso programaremos utilizando el editor IntelliJ IDEA, además, usaremos librerías como JUnit y Mockito.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Beneficios
+    - Comprobar los requerimientos de nuestra aplicación.
+    - Documentación y ejemplos de nuestras clases.
+    - Mediante Test Driven Development (TDD) nos puede ayudar en el diseño de clases.
+    - Confianza al desarrollar.
+    - Confianza para refactorizar nuestro código.
+    - Es una habilidad que se solicita cada vez más en el mercado.
+    
+    Existen test automáticos y manuales, los automáticos van a requerir tiempo de desarrollo y 
+    algunas veces no serán tan viables, pero de ser posible siempre trata de hacer test 
+    automáticos ya que:
+
+        - Son más rápidos.
+        - Son más fiables.
+        - Son incrementales.
+    
+    Tipos de test
+        - Unitario: realizan pruebas a una función o clase muy concreta de nuestro proyecto.
+        - Integración: prueban cómo se conectan diferentes componentes de nuestro proyecto.
+        - Funcionales: prueban una funcionalidad de nuestro proyecto, pueden involucrarse 
+          varias clases.
+        - Inicio a fin: prueba todo un proceso del proyecto.
+        - Estrés: útil para probar si nuestra aplicación puede soportar grandes cantidades de 
+          procesos y peticiones a la vez.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Instalación de IntelliJ IDEA
+    Vamos a descargar el editor IntelliJ IDEA https://www.jetbrains.com/idea/ y crear un 
+    proyecto en Maven. Para indicarle a Maven que usaremos Java 8 debemos añadir las siguientes 
+    líneas de código:
+        <properties>
+            <maven.compiler.source>1.8maven.compiler.source>
+            <maven.compiler.target>1.8maven.compiler.target>
+        </properties>
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Para crear una clase test damos alt + intro al nombre de la clase  -> Create Test
+
+import org.junit.Assert;
+Assert.assertEquals(); -> Es una funcion  que inportamos de junit 
+
+Todos los test que hagamos tenemos que colocar @test
+--------------------------------------------------------------------------------------------------------------------------
+
+junit 
+    Vamos a añadir Junit a nuestro proyecto copiando las siguientes 
+    líneas de código y las agregamos al pom:
+        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+    La función assertEquals de JUnit se encarga de comprobar que dos valores sean iguales, 
+    en este caso comprobar si nuestra función repeat retorna el valor esperado.
+
+    Debemos indicarle a JUnit mediante @Test que función va a realizar una prueba.   
+
+    La forma correcta de separar nuestras pruebas es realizar cada una en su propia función, 
+    además, el nombre de la función debe describir que estamos probando.
+
+    Para indicarle a JUnit que esperamos una excepción lo debemos hacer de la siguiente forma:
+        @Test(expected = IllegalArgumentException.class)
+
+--------------------------------------------------------------------------------------------------------------------------
+Test con Mockito para simular un dado
+    Mockito  https://site.mockito.org nos va a servir para simular clases mientras probamos, 
+    para añadirlo a nuestro proyecto debemos copiar las siguientes líneas de código y las agregamos al pom:
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>2.23.4</version>
+            <scope>test</scope>
+        </dependency>
+
+    Para instanciar un mock debemos utilizar la función Mockito.mock() e indicarle como 
+    parámetro la clase que va a simular.
+    Las funciones assertFalse y assertTrue tal como su nombre lo indican, sirven para 
+    comprobar si un valor es igual a false o true respectivamente.
+--------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------
