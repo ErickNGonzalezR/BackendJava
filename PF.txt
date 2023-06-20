@@ -29,7 +29,7 @@ Ciudadanos de primera clase
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Funciones "Puras" (Pure finctions)
+Funciones "Puras" (Pure functions)
     - Es una funcion que siempre genera el mismo resultado o parametro 
     - O sum (5, 3)// siempre sera 8
     - Funcionan en ailsamiento (no dependen ni las afecta un contexto)
@@ -51,9 +51,199 @@ Funciones "Puras" (Pure finctions)
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Efectos secundarios 
-    Todo cambio obserbable desde fuera del sistema es un efecto secundario
-        - Podemos 
+    Todo cambio observable desde fuera del sistema es un efecto secundario
+        - Podemos redducir / Controlar cuando suceden
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Funciones de orden mayor
+    Una fucion de orden mayor cumple almenos con una de estas caracteristicas:
+        - Toma otra funcion como parametro
+        - Retorna una funcion como resultado
+
+    Ventajas
+    - Pasar comportamiento
+    - compartir un medio de comunicacion (callbacks)
+    - Compartir logica / reglas
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Funciones lambda
+    Son funciones que no tienen nombre o funciones anonimas
+
+    Porque se usan 
+        - Es un compertamiento de uso unico 
+        - Una regla que solo se requiere en un lugar 
+        - Es una funcion extremadamente simple 
+    Ejemplo 
+        Int calculateWith(Function calculatorFun){
+            return x
+        }
+        int result = calculateWith(x -> x * 9)
+
+    https://platzi.com/blog/feature-lambda/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Inmutabilidad
+    Ventajas de tener datos inmutables 
+        - Una vez creado no se puede alterar
+        - Facilita crear funcioes puras
+        - Facilita usar theards/ Concurrencia
+
+    Desvntajas
+        - Nueva instancia por cada set de modificaciones
+        - Requiere especial atencion al diseño
+        - Objetos murtables fuera de nuestro alcance
+        
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Formas de escribir funciones
+        Function <Integer, Integer> square = new Function <Integer, Integer>{
+            @override
+            public Integer apply (Integer x){
+                return x * x;
+                
+            }
+        };
+        System.out.println(square.applay(5))
+        System.out.println(square.applay(25))
+        
+    Es igual a:
+        Static int square (int x){
+            return x * x;
+        }
+    O
+    
+        Function <Integer, integer> square = x -> x * x;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Funciones 
+    - Predicate
+        Para crear una funcion que reciba un entero y reciba un booleano
+        Permiten validar informacion 
+    - Consumer
+        Podemos realizar operaciones sobre un tipo de dato (Tenemos un listado 
+        de datos y por cada dato en la lista vamos operando sobre ese dato en especifico) como borrar archivos
+
+    - Supplier 
+        Se encarga de generar datos (proveer datos), cuyo unico metodo que tiene es get
+        Nos sirve para crear configuraciones bajo demanda o poder crear archivos 
+    - Operators 
+        Nos permiten trabajar sobre un tipo de vato definido si necesidad de definir que tipos de datos vamos a 
+        estar reibiendo o generando 
+
+    - BiFunction
+        Permite crear funciones que recibern varios tipos de parametros. podemos cvrear un formateador de texto 
+
+    - SAM y FunctionalInterface
+        Son sigas de  Single Abstract Method. reprecenta una interfaz de un solo metodo sin definir
+
+    -
+    -
+    -
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Revisando el paquete java.util.function: Predicate
+    
+    Para crear una funcion que reciba un entero y reciba un booleano
+
+        Function <Integer, Boolean> isOdd = x -> x % 2 = 1;
+
+    Predicate es una especie de funcion que trabaja sobre un tipo pero genera un boolean
+        Predicate <Integer> isEven = x -> x % 2 = 0;
+        isEven.test(4) // verdadero
+
+    --------------------------------------------------------------------------------------------
+
+    Predicate <Student> isApproved = student.getCalificacion() > 6.0;
+    static class Student {
+        private double calificacion;
+
+        consructor y get and setter
+    }    
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Revisando el paquete java.util.function: Consumer y Supplier
+
+    public class CLIArguments{
+        private boolean isHelp;
+
+        public boolean isHelp(){
+            returnisHelp;
+        }
+
+    }
+    ------------------------------------------------------------------------------------
+
+    public class CLIArgumentsutils{
+        static void showHelp(CLIArguments cliArguments){
+            Consumer<CLIArguments> consumerHelper = cliArguments1 -> {
+                if(cliArguments1.isHelp()){
+                    System.out.println("Manual solicitado");
+                }
+            };
+            consumerHelper.accept(cliArguments);
+        }
+        static CLIArguments generateCLI(){
+            Supplier<CLIArguments> generator = () -> new CLIArguments;
+            return generator.get();
+        };
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Revisando el paquete java.util.function: Operators y BiFunction
+
+    public class StringFunctions[
+        public class void main(string[] args){
+            
+            UnaryOperator <string> quote = text -> "\"" + text + "\"";   // para generar comillas se e agrega el \
+            UnaryOperator <String> addMark = text -> + "!"
+
+            System.out.println(quote.apply("Hola estudiante");
+            System.out.println(addMark.apply("Hola");
+
+
+            BiFunction <Integer, Integer, Integer> multiplicacion = (x, y) -> x*y;
+            Multiplicacion.apply(5,4);
+
+            BiOperator <Integer> multiplicacion1 = (x, y) -> x*y;
+            Multiplicacion1.apply(6,4);
+
+            BiFunction <String, Integer, String> leftPad =
+                (text, number) -> String.formst("%" + number + "s", text); //String.formst() genera un nuevo String con el formato que le demos, al usar "s" agregamos el numero de espacios que necesitamos 
+             System.out.println(leftPad.apply ("Java", 10));
+
+        }
+    ]
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Entendiendo dos jugadores clave: SAM y FunctionalInterface
+
+    public class AgeUtils{
+        public static void main(String[] args){
+            TriFunction <Integer, String> addCeros = x ->  10 ? "0" + x : String.valueOf(x);
+
+            
+            TriFunction <Integer, Integer, Integer, LocalDate> parseDate =  
+            (day, month, year)-> LocalDate.parse(Year + "-" + addCeros.apply(month) "-" + addCeros.apply(day)); 
+
+            TriFunction <Integer, Integer, Integer, Integer> calculateAge = 
+            (day, month, year)-> Period,between(parseDate.apply(day, month, year), LocalDate.now()).getYears();
+        
+            System.out.println(calculateAge.apply(10, 10, 1992))
+
+        }
+
+        @FunctionalInterface
+        interface TriFunction<T, U, V, R>{
+            R apply(T t,U u,V v);
+        }
+    }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -71,7 +261,6 @@ Efectos secundarios
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -79,20 +268,10 @@ Efectos secundarios
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Repositorio de la clase
+    https://github.com/sierisimo/JavaSE-Functional-platzi/branches/active?page=1
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
