@@ -272,78 +272,79 @@ bitycode
 		nombre_de_la_funcion(variables)
 		calcularnumeromayor(numero1, numero2, numer3)
 
+### **Ejemplo**
 	
-	Ejemplo
 		private static void calcular numeromayor(int numero1, int numero2, 
-		int numero3){
-		int numeromayor=numero1
-		if (numero2 > numeromayor){
-			numero mayor = numero2;
-		}
-		if (numero2 > numeromayor){	
-			numeromayor = numero3;
-		}
-		JOptionPane.showMessage(null,"el numero mayoer es: " + numeromayor)
-		}
-		// void significa que no va ha devolver ningun valor
+			int numero3){
+			int numeromayor=numero1
+			if (numero2 > numeromayor){
+				numero mayor = numero2;
+			}
+			if (numero2 > numeromayor){	
+				numeromayor = numero3;
+			}
+			JOptionPane.showMessage(null,"el numero mayoer es: " + numeromayor)
+			}
+			// void significa que no va ha devolver ningun valor
 
-		public static integer cargarnumero(){	
-			string strnumero = JOptionPane.showInputDialog(null," mensaje ");			
-			int numero = Integer.parseInt(strnumero)
-			return numero;
-		}
-		PARA LLAMAR LA FUNCION
+			public static integer cargarnumero(){	
+				string strnumero = JOptionPane.showInputDialog(null," mensaje ");			
+				int numero = Integer.parseInt(strnumero)
+				return numero;
+			}
+   
+   ### **PARA LLAMAR LA FUNCION**
 			int variable = cargarnumero()
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-FORMULARIOS
-	PARA LLAMAR UN FORMULARIO
+## **FORMULARIOS**
+### **PARA LLAMAR UN FORMULARIO**	
 		public static void main (String[] args){
 		formulario ventana = new formulario();
 		ventana.show;
 		}
-
- 	PARA ACCERDER A LA CAJA DE TEXTO SE COLOCA 
+  
+### **PARA ACCERDER A LA CAJA DE TEXTO SE COLOCA **
 		String variable =this.txtcajadetxto.getText();
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-ARREGLOS
+## **ARREGLOS**
 	String[] nombreVariable = new String [tamañoArreglo];
-
-	PARA HACER ARREGLOS SIN NECESIDAD DE COLOCAR TAMAÑO
+ 
+### **PARA HACER ARREGLOS SIN NECESIDAD DE COLOCAR TAMAÑO**
 		List<String> lista = new Ar rayList<String>();
 		lista.add(variable);
 
-	LIBRERIA NECESARIAS PARA LOS ARREGLOS
+### **LIBRERIA NECESARIAS PARA LOS ARREGLOS**
 		import java.util.ArrayList;
 		import java.util.List;
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-JAVA DOC
-	COMENTATARIOS
-	- // 
-	- /* */
-	- /**
+## **JAVA DOC**
 	 * DESCRIPCION: descripcion de la funcion	
 	 * @param Nombre variable DESCRIPCION para que es 
 	 *  @param Nombre variable DESCRIPCION para que es
 	 *  @return Nombre variable que devuelve
 	 */ JAVA DOC va arriba de la funcion que le queremos agregar la documentacion
 
-	 ACTIVACION EN ENTELLIJ IDEA
-	 inrellj idea -> settings  -> editor -> general -> code completion ->show the documentation popup 
+## **COMENTATARIOS**
+
+	 // 
+ ### 
+	 /* */
+ ### 
+	 /*
+  	*
+   	*
+    	*/
+  ### 
+	 
+## **ACTIVACION EN ENTELLIJ IDEA**
+inrellj idea -> settings  -> editor -> general -> code completion ->show the documentation popup 
 
 	 https://es.wikipedia.org/wiki/Javadoc
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-PROGRAMACION ORIENTADA A OBJETOS
-	PROGRAMACION ORIENTADA A OBJETOS ES UNA ABTRACCION DE ALGO QUE PUEDA VER EN EL MUNDO REAL
-	EN PROGRAMACION ORIENTADA A OBJETOS HAY CLASES, LAS VARIABLES QUE SE ENCUENTRAN
-	DENTRO SE VA A LLAMAR PROPIEDADES Y LAS FUNCIONES METODOS QUE SE ENCUENTRAN EN ELLAS.
+### **PROGRAMACION ORIENTADA A OBJETOS**
+PROGRAMACION ORIENTADA A OBJETOS ES UNA ABTRACCION DE ALGO QUE PUEDA VER EN EL MUNDO REAL
+EN PROGRAMACION ORIENTADA A OBJETOS HAY CLASES, LAS VARIABLES QUE SE ENCUENTRAN
+DENTRO SE VA A LLAMAR PROPIEDADES Y LAS FUNCIONES METODOS QUE SE ENCUENTRAN EN ELLAS.
 
 	SIEMPRE QUE QUERAMOS MODIFICAR O ESBLECER DATOS TRAEMOS UN SET.***** 
 	SIEMPRE QUE QUERAMOS TRAER O OBTENER UN DATO UTILIZAMOS UN GET.******
